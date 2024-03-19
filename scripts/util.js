@@ -24,5 +24,9 @@ class Bg extends Obj{
 }
 
 class Ground extends Bg{
+
+}
+
+class Bird extends Obj{
     
 }

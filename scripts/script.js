@@ -2,14 +2,19 @@ var canvas = document.getElementById('canvas').getContext("2d");
 
 var bg = new Bg(0,0,500,900,"assets/images/sky.png");
 var bg2 = new Bg(500,0,500,900,"assets/images/sky.png");
+
 var ground = new Ground(0,736,500,164,"assets/images/ground.png");
 var ground2 = new Ground(500,736,500,164,"assets/images/ground.png");
+
+var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
+
 
 function draw() {
     bg.draw();
     bg2.draw();
     ground.draw();
     ground2.draw();
+    bird.draw();
 }
 
 function update() {
