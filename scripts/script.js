@@ -24,6 +24,7 @@ function main() {
     canvas.clearRect(0, 0, 500, 900);
     draw();
     update();
+    requestAnimationFrame(main);
 }
 
-setInterval(main, 100);
+main();
