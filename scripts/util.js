@@ -1,0 +1,15 @@
+class Obj{
+    constructor(positionX, positionY, width, height, image){
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.width = width;
+        this.height = height;
+        this.image = image;
+    }
+
+    draw(){
+        var img = new Image();
+        img.src = this.image;
+        canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
+    }
+}
