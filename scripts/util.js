@@ -13,3 +13,12 @@ class Obj{
         canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
     }
 }
+
+class Bg extends Obj{
+    move(speed, limit, pos){
+        this.positionX -= speed; // move background to the left
+        if(this.positionX <= limit){
+            this.positionX = pos;
+        }
+    }
+}
