@@ -43,6 +43,8 @@ function update() {
 
     coin.move(pipe1);
     coin.animation(5, 5, "");
+
+    bird.collide(coin);
 }
 
 function main() {

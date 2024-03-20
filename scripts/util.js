@@ -29,6 +29,20 @@ class Obj{
 
         this.image = "assets/images/" + name + this.frame + ".png";
     }
+
+    collide(obj) {
+        if (this.positionX < obj.positionX +obj.width &&
+            this.positionX + this.width > obj.positionX &&
+            this.positionY < obj.positionY +obj.height &&
+            this.positionY + this.height > obj.positionY) 
+        {
+            //console.log("colidiu");
+            return true;
+        }else {
+            //console.log("NÃO colidiu");
+            return false;
+        }
+    }
 }
 
 class Bg extends Obj{
