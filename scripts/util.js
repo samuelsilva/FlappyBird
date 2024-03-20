@@ -68,10 +68,14 @@ class Bird extends Obj{
 
 class Pipe extends Obj{
     
-    move(speed, limit, new_pos){
+    move(speed, limit, new_pos, pipe2){
         this.positionX -= speed;
         if(this.positionX <= limit){
             this.positionX = new_pos;
+            this.positionY = Math.random() * (600 - 400) + 400;
         }
+
+        pipe2.positionX = this.positionX;
+        pipe2.positionY = this.positionY - 600;
     }
 }

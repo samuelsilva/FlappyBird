@@ -36,8 +36,7 @@ function update() {
     bird.animation(8, 4, "bird");
     bird.limits();
 
-    pipe1.move(1, -100, 600);
-    pipe2.move(1, -100, 600);
+    pipe1.move(1, -100, 600, pipe2);
 }
 
 function main() {
