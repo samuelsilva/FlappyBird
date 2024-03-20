@@ -9,7 +9,7 @@ var ground2 = new Ground(500,736,500,164,"assets/images/ground.png");
 var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
 document.addEventListener("click", function(event){
-    bird.positionY -= 5;
+    bird.speed -= 12;
 });
 
 function draw() {
@@ -25,6 +25,7 @@ function update() {
     bg2.move(1, 0, 500);
     ground.move(2, -500, 0);
     ground2.move(2, 0, 500);
+    bird.move();
     bird.animation(8, 4, "bird");
     
 }

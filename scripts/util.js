@@ -46,4 +46,13 @@ class Ground extends Bg{
 
 class Bird extends Obj{
 
+    speed = 2;
+    gravity = 1;
+
+    move(){
+        if(this.speed < 10) {
+            this.speed += this.gravity;
+        }
+        this.positionY += this.speed;
+    }
 }
