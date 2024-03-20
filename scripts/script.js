@@ -16,8 +16,13 @@ var coin = new Coin(50,50, 45,65, "assets/images/3.png");
 var score = 0;
 var score_text = new Text();
 
+var fly = new Audio("assets/sounds/wing.ogg");
+var coin_pick = new Audio("assets/sounds/point.ogg");
+
+
 document.addEventListener("click", function(event){
-    bird.speed -= 12;
+    bird.speed -= 15;
+    fly.play();
 });
 
 function draw() {
@@ -54,6 +59,7 @@ function update() {
         if(coin.set_visible){
             coin.set_visible = false;
             score += 1;
+            coin_pick.play();
         }
     }
  
