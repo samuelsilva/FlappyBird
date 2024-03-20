@@ -8,6 +8,9 @@ var ground2 = new Ground(500,736,500,164,"assets/images/ground.png");
 
 var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
+document.addEventListener("click", function(event){
+    bird.positionY -= 5;
+});
 
 function draw() {
     bg.draw();
