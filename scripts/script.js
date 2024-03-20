@@ -6,6 +6,9 @@ var bg2 = new Bg(500,0,500,900,"assets/images/sky.png");
 var ground = new Ground(0,736,500,164,"assets/images/ground.png");
 var ground2 = new Ground(500,736,500,164,"assets/images/ground.png");
 
+var pipe1 = new Obj(300,500, 96, 358, "assets/images/pipe1.png");
+var pipe2 = new Obj(300,0, 96, 358, "assets/images/pipe2.png");
+
 var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
 document.addEventListener("click", function(event){
@@ -15,6 +18,8 @@ document.addEventListener("click", function(event){
 function draw() {
     bg.draw();
     bg2.draw();
+    pipe1.draw();
+    pipe2.draw();
     ground.draw();
     ground2.draw();
     bird.draw();
