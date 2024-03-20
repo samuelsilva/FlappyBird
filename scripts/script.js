@@ -13,6 +13,9 @@ var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
 var coin = new Coin(50,50, 45,65, "assets/images/3.png");
 
+var score = 0;
+var score_text = new Text();
+
 document.addEventListener("click", function(event){
     bird.speed -= 12;
 });
@@ -26,6 +29,7 @@ function draw() {
     ground2.draw();
     bird.draw();
     coin.draw();
+    score_text.draw_text(60, "Arial", 225, 100, "white");
 }
 
 function update() {
@@ -44,7 +48,18 @@ function update() {
     coin.move(pipe1);
     coin.animation(5, 5, "");
 
-    bird.collide(coin);
+    score_text.text = score;
+
+    if(bird.collide(coin)) {
+        if(coin.set_visible){
+            coin.set_visible = false;
+            score += 1;
+        }
+    }
+ 
+    if(bird.collide(pipe1)) {
+    //    coin.set_visible = false;
+    }
 }
 
 function main() {

@@ -39,11 +39,21 @@ class Obj{
             this.positionY < obj.positionY +obj.height &&
             this.positionY + this.height > obj.positionY) 
         {
-            obj.set_visible = false;
+            return true;
         }else {
             //console.log("NÃO colidiu");
-            //return false;
+            return false;
         }
+    }
+}
+
+class Text{
+    text = "";
+
+    draw_text(size, font, posicaoX, posicaoY, color){
+        canvas.font = size + "px" + " " + font;
+        canvas.fillStyle = color;
+        canvas.fillText(this.text, posicaoX, posicaoY);
     }
 }
 
