@@ -14,11 +14,15 @@ var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 var coin = new Coin(50,50, 45,65, "assets/images/3.png");
 
 var score = 0;
+var game_over_message = "GAME OVER";
 var score_text = new Text();
+var game_over_text = new Text();
+
 
 var fly = new Audio("assets/sounds/wing.ogg");
 var coin_pick = new Audio("assets/sounds/point.ogg");
 var game_over = new Audio("assets/sounds/hit.ogg");
+
 
 var play = true;
 
@@ -72,8 +76,11 @@ function update() {
         coin.animation(5, 5, "");
     
         score_text.text = score;
-        
+        game_over_text.text = game_over_message;
+
         collision();
+    }else{
+        game_over_text.draw_text(60, "Arial", 70, 450, "red");
     }
 
 }
