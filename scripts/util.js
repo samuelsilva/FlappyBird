@@ -1,4 +1,7 @@
 class Obj{
+    frame = 0;
+    timer = 0;
+
     constructor(positionX, positionY, width, height, image){
         this.positionX = positionX;
         this.positionY = positionY;
@@ -11,6 +14,20 @@ class Obj{
         var img = new Image();
         img.src = this.image;
         canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
+    }
+
+    animation(speed, limit, name){
+        this.timer += 1;
+        if(this.timer >= speed) {
+            this.timer = 0;
+            this.frame += 1;
+        }
+
+        if(this.frame >= limit) {
+            this.frame = 0;
+        }
+
+        this.image = "assets/images/" + name + this.frame + ".png";
     }
 }
 
@@ -28,5 +45,5 @@ class Ground extends Bg{
 }
 
 class Bird extends Obj{
-    
+
 }
