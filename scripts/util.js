@@ -55,4 +55,13 @@ class Bird extends Obj{
         }
         this.positionY += this.speed;
     }
+
+    // define limits to the fly: ground/sky
+    limits() {
+        if(this.positionY >= 695) {
+            this.positionY = 695;
+        }else if(this.positionY <=0) {
+            this.positionY = 0;
+        }
+    }
 }

@@ -27,7 +27,7 @@ function update() {
     ground2.move(2, 0, 500);
     bird.move();
     bird.animation(8, 4, "bird");
-    
+    bird.limits();
 }
 
 function main() {
