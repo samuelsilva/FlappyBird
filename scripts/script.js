@@ -6,8 +6,8 @@ var bg2 = new Bg(500,0,500,900,"assets/images/sky.png");
 var ground = new Ground(0,736,500,164,"assets/images/ground.png");
 var ground2 = new Ground(500,736,500,164,"assets/images/ground.png");
 
-var pipe1 = new Obj(300,500, 96, 358, "assets/images/pipe1.png");
-var pipe2 = new Obj(300,0, 96, 358, "assets/images/pipe2.png");
+var pipe1 = new Pipe(300,500, 96, 358, "assets/images/pipe1.png");
+var pipe2 = new Pipe(300,0, 96, 358, "assets/images/pipe2.png");
 
 var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
@@ -28,11 +28,16 @@ function draw() {
 function update() {
     bg.move(1, -500, 0);
     bg2.move(1, 0, 500);
+
     ground.move(2, -500, 0);
     ground2.move(2, 0, 500);
+    
     bird.move();
     bird.animation(8, 4, "bird");
     bird.limits();
+
+    pipe1.move(1, -100, 600);
+    pipe2.move(1, -100, 600);
 }
 
 function main() {

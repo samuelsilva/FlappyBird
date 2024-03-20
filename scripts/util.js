@@ -65,3 +65,13 @@ class Bird extends Obj{
         }
     }
 }
+
+class Pipe extends Obj{
+    
+    move(speed, limit, new_pos){
+        this.positionX -= speed;
+        if(this.positionX <= limit){
+            this.positionX = new_pos;
+        }
+    }
+}
