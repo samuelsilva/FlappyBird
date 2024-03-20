@@ -1,6 +1,7 @@
 class Obj{
     frame = 0;
     timer = 0;
+    set_visible = true;
 
     constructor(positionX, positionY, width, height, image){
         this.positionX = positionX;
@@ -11,9 +12,11 @@ class Obj{
     }
 
     draw(){
-        var img = new Image();
-        img.src = this.image;
-        canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
+        if(this.set_visible) {
+            var img = new Image();
+            img.src = this.image;
+            canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
+        }
     }
 
     animation(speed, limit, name){
@@ -36,11 +39,10 @@ class Obj{
             this.positionY < obj.positionY +obj.height &&
             this.positionY + this.height > obj.positionY) 
         {
-            //console.log("colidiu");
-            return true;
+            obj.set_visible = false;
         }else {
             //console.log("NÃO colidiu");
-            return false;
+            //return false;
         }
     }
 }
@@ -98,5 +100,11 @@ class Coin extends Obj{
     move(pipe) {
         this.positionX = pipe.positionX + 25;
         this.positionY = pipe.positionY - 150;
+    
+        if( this.positionX <= -50) {
+            this.set_visible = true;
+        }
     }
+
+    
 }
