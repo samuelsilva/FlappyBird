@@ -79,3 +79,10 @@ class Pipe extends Obj{
         pipe2.positionY = this.positionY - 600;
     }
 }
+
+class Coin extends Obj{
+    move(pipe) {
+        this.positionX = pipe.positionX + 25;
+        this.positionY = pipe.positionY - 150;
+    }
+}

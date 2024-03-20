@@ -11,6 +11,8 @@ var pipe2 = new Pipe(300,0, 96, 358, "assets/images/pipe2.png");
 
 var bird = new Bird(50,400,63,51, "assets/images/bird0.png");
 
+var coin = new Coin(50,50, 45,65, "assets/images/3.png");
+
 document.addEventListener("click", function(event){
     bird.speed -= 12;
 });
@@ -23,6 +25,7 @@ function draw() {
     ground.draw();
     ground2.draw();
     bird.draw();
+    coin.draw();
 }
 
 function update() {
@@ -36,7 +39,10 @@ function update() {
     bird.animation(8, 4, "bird");
     bird.limits();
 
-    pipe1.move(1, -100, 600, pipe2);
+    pipe1.move(1, -100, 500, pipe2);
+
+    coin.move(pipe1);
+    coin.animation(5, 5, "");
 }
 
 function main() {
